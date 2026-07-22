@@ -1,0 +1,24 @@
+<main class="shell">
+  <header>
+    <p class="eyebrow">{{ title }}</p>
+    <nav>
+      <button (click)="selectView('dashboard')">Dashboard</button>
+      <button (click)="selectView('tasks')">Tasks</button>
+    </nav>
+  </header>
+
+  <section *ngIf="selectedView === 'dashboard'">
+    <h1>Welcome back.</h1>
+    <p>Your current view is <strong>{{ selectedView }}</strong>.</p>
+    <button (click)="selectView('tasks')">Open task list</button>
+  </section>
+
+  <section *ngIf="selectedView === 'tasks'">
+    <h1>Task list</h1>
+    <input [(ngModel)]="searchTerm" [value]="searchTerm" placeholder="Add a task" />
+    <button (click)="addTask()">Add task</button>
+    <ul>
+      <li *ngFor="let task of tasks">{{ task }}</li>
+    </ul>
+  </section>
+</main>

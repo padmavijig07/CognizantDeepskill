@@ -1,0 +1,8 @@
+body { margin: 0; background: #e9f0ec; color: #20312d; font: 16px system-ui, sans-serif; }
+.shell { max-width: 800px; margin: auto; padding: 40px 22px; }
+header { display: flex; justify-content: space-between; align-items: center; }
+.eyebrow { color: #bd5a43; font-weight: 700; letter-spacing: 1px; }
+nav, section { background: #fff; border: 1px solid #cad8d0; padding: 20px; border-radius: 8px; }
+nav { display: flex; gap: 8px; padding: 8px; }
+button { border: 0; background: #20312d; color: #fff; padding: 10px 14px; border-radius: 4px; cursor: pointer; }
+input { padding: 10px; border: 1px solid #cad8d0; margin-right: 8px; }
