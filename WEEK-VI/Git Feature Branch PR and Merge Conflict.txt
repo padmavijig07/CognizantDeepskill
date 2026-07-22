@@ -1,0 +1,59 @@
+WEEK VI: FEATURE BRANCH, PULL REQUEST, AND MERGE CONFLICT PRACTICE
+
+1. Start from the latest main branch
+
+   git switch main
+   git pull origin main
+
+2. Create a feature branch
+
+   git switch -c feature/add-search-filter
+
+3. Make a change and commit it
+
+   git add .
+   git commit -m "Add search filter"
+
+4. Push the branch and open a pull request
+
+   git push -u origin feature/add-search-filter
+
+   Open a PR from feature/add-search-filter into main.
+
+5. Reproduce a merge conflict
+
+   On main, edit the same line in `sample.txt` and commit it:
+
+   git switch main
+   git add sample.txt
+   git commit -m "Update shared configuration"
+
+   Return to the feature branch and merge main:
+
+   git switch feature/add-search-filter
+   git merge main
+
+6. Resolve the conflict
+
+   Open the conflicted file and choose the correct final content between:
+
+   <<<<<<< HEAD
+   feature branch content
+   =======
+   main branch content
+   >>>>>>> main
+
+   Remove the conflict markers, test the result, then finish the merge:
+
+   git add sample.txt
+   git commit -m "Resolve merge conflict"
+
+7. Update the pull request
+
+   git push origin feature/add-search-filter
+
+Good practice:
+- Pull before starting new work.
+- Keep commits small and descriptive.
+- Run tests after resolving conflicts.
+- Never commit conflict markers.
